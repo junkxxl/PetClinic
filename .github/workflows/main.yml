@@ -10,7 +10,7 @@ on:
 jobs:
  Test-petclinic:
     runs-on: ubuntu-latest
-    container: springcommunity/spring-petclinic-rest:latest
+    container: docker run -p 9966:9966 springcommunity/spring-petclinic-rest
 
     services:
 
