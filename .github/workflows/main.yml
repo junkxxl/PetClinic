@@ -19,7 +19,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - run: |
-         docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
          docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+         docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
          gradle test
          
