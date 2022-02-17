@@ -18,11 +18,12 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+          container: docker run -p 9966:9966 springcommunity/spring-petclinic-rest
           
      
      services: 
              redis:
-              docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+              
         image: redis   
            
       - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
