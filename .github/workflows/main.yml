@@ -17,9 +17,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
-      
-      - run: docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+          distribution: 'temurin'
+          
       - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
+      - run: docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+      
       - name: Build with Gradle
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
