@@ -19,8 +19,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - uses: docker://springcommunity/spring-petclinic-rest
-          
-          
+           
       - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
     
     
