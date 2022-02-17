@@ -11,7 +11,9 @@ jobs:
   Test-petclinic:
     runs-on: ubuntu-latest
     services:
-      redis: docker pull springcommunity/spring-petclinic-rest:latest
+      redis: springcommunity/spring-petclinic-rest:latest
+      image: redis
+  
    
     
 
