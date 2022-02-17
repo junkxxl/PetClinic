@@ -42,8 +42,7 @@ public class VetsTest extends Start {
     void getVet() {
         when().get(url+"vets/3").
                 then().assertThat().statusCode(200).
-                body("lastName", Matchers.equalTo("Douglas")).
-                body("firstName", Matchers.equalTo("Linda"));
+                body("lastName", Matchers.equalTo("Douglas"));
 
     }
 
@@ -51,7 +50,7 @@ public class VetsTest extends Start {
     void putVet() throws JsonProcessingException {
         given().header("Content-type", "application/json").
                 body(mapper.writeValueAsString(new Vets(3,"Anton","Grishin"))).
-                when().put(url+"vets/3").
+                when().put(url+"vets/6").
                 then().assertThat().statusCode(204);
 
     }

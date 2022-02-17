@@ -44,9 +44,9 @@ public class SpecialtiesTest extends Start {
     @Test
     void getSpecialization() {
 
-        when().get(url + "specialties/3").
+        when().get(url + "specialties/2").
                 then().assertThat().statusCode(200).
-                and().body("name", Matchers.equalTo("dentistry"));
+                and().body("name", Matchers.equalTo("surgery"));
 
     }
 
