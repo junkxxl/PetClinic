@@ -10,13 +10,15 @@ on:
 jobs:
  Test-petclinic:
     runs-on: ubuntu-latest
-    container: docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+    container: springcommunity/spring-petclinic-rest
 
     services:
 
        redis:
   
           image: redis
+          ports: 
+            - 9966:9966
     steps:
       - uses: actions/checkout@v1 
       - name: Set up JDK 11
