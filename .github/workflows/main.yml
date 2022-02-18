@@ -10,9 +10,7 @@ on:
 jobs:
   Test-petclinic:
     runs-on: ubuntu-latest
-    services:
-      redis: springcommunity/spring-petclinic-rest:latest
-      image: redis
+    
   
    
     
@@ -28,4 +26,4 @@ jobs:
 
 
       - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
-      - run: gradle test
+      - run: docker run springcommunity/spring-petclinic-rest & gradle test
