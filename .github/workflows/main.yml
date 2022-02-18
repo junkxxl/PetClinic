@@ -13,15 +13,12 @@ jobs:
    
    
     services:
-      redis:
+      123:
         image: springcommunity/spring-petclinic-rest:latest
         ports: 
          - 9966:9966
-    container: 
-        image: postgres:9.6.0
-        ports: 
-         - 5432:5432
-   
+       
+  
    
     
 
@@ -35,5 +32,5 @@ jobs:
 
 
 
-      
+      - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
       - run: gradle test
