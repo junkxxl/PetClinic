@@ -19,7 +19,7 @@ ___
     -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
   * Запустить тесты me.junkxxl.testing  
 ````
-###Переменные окружения
+## Переменные окружения
 ````
 * PETCLINIC - "http://localhost:9966/petclinic/api/"
 ````
