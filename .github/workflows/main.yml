@@ -18,7 +18,11 @@ jobs:
         ports: 
          - 9966:9966
     container: 
-        image: --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic postgres:9.6.0
+        image: POSTGRES_DB=petclinic postgres:9.6.0
+        credentials:
+               username: postgres-petclinic
+               password: petclinic
+          
         ports: 
          - 5432:5432
    
