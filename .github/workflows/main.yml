@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     
    
-    container: springcommunity/spring-petclinic-rest:latest
+   
     services:
-      redis: 
-        image: redis
+      redis:
+        image: springcommunity/spring-petclinic-rest:latest
         ports: 
          - 9966:9966
        
