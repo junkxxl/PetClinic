@@ -9,19 +9,16 @@ on:
 jobs:
   Test-petclinic:
     runs-on: ubuntu-latest
-    
-   
+       
    
     services:
-      123:
+      Petclinic:
         image: springcommunity/spring-petclinic-rest:latest
         ports: 
          - 9966:9966
        
   
    
-    
-
     steps:
       - uses: actions/checkout@v1
       - name: Set up JDK 11
@@ -29,7 +26,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-
 
 
       - run: docker run --name postgres-petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 -d postgres:9.6.0
